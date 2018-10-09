@@ -1,6 +1,0 @@
-﻿{
-  "addr": "AHrdmx82TLiuFXXj2oh44FbgRGZR5A1dAj",
-  "firstuse": 1468595301,
-  "lastuse": 1468595301,
-  "txcount": 2
-}
