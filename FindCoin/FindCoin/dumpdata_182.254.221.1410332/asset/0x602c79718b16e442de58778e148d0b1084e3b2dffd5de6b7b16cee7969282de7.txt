@@ -1,0 +1,23 @@
+﻿{
+  "version": 0,
+  "id": "0x602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7",
+  "type": "UtilityToken",
+  "name": [
+    {
+      "lang": "zh-CN",
+      "name": "小蚁币"
+    },
+    {
+      "lang": "en",
+      "name": "AntCoin"
+    }
+  ],
+  "amount": "100000000",
+  "available": 1,
+  "precision": 8,
+  "owner": "00",
+  "admin": "AWKECj9RD8rS8RPcpCgYVjk1DeYyHwxZm3",
+  "issuer": 1,
+  "expiration": 0,
+  "frozen": 0
+}

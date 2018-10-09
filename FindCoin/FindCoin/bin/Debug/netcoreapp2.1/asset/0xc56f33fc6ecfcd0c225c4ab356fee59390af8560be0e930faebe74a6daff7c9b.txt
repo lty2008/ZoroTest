@@ -1,0 +1,23 @@
+﻿{
+  "version": 0,
+  "id": "0xc56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b",
+  "type": "GoverningToken",
+  "name": [
+    {
+      "lang": "zh-CN",
+      "name": "小蚁股"
+    },
+    {
+      "lang": "en",
+      "name": "AntShare"
+    }
+  ],
+  "amount": "100000000",
+  "available": 1,
+  "precision": 0,
+  "owner": "00",
+  "admin": "Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt",
+  "issuer": 1,
+  "expiration": 0,
+  "frozen": 0
+}

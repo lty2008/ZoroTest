@@ -1,0 +1,14 @@
+﻿{
+  "txid": "0x306b645643a19a223c3b7f17edd28816fd951942d6923a8249a04a230fa21843",
+  "size": 10,
+  "type": "MinerTransaction",
+  "version": 0,
+  "attributes": [],
+  "vin": [],
+  "vout": [],
+  "sys_fee": "0",
+  "net_fee": "0",
+  "scripts": [],
+  "nonce": 2139535367,
+  "blockindex": 486
+}

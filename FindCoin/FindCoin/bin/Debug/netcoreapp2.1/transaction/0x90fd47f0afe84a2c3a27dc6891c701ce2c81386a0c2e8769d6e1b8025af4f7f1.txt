@@ -1,0 +1,26 @@
+﻿{
+  "txid": "0x237324e5200d492fbca338d51b632db225b6e45f36e06448b00ca2e1139d6b1c",
+  "size": 69,
+  "type": "IssueTransaction",
+  "version": 0,
+  "attributes": [],
+  "vin": [],
+  "vout": [
+    {
+      "n": 0,
+      "asset": "0xc56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b",
+      "value": "100000000",
+      "address": "AHrdmx82TLiuFXXj2oh44FbgRGZR5A1dAj"
+    }
+  ],
+  "sys_fee": "0",
+  "net_fee": "0",
+  "scripts": [
+    {
+      "invocation": "",
+      "verification": "51"
+    }
+  ],
+  "nonce": null,
+  "blockindex": 0
+}

@@ -1,0 +1,13 @@
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.csprojAssemblyReference.cache
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.csproj.CoreCompileInputs.cache
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.AssemblyInfoInputs.cache
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.AssemblyInfo.cs
+C:\Users\tlan\NEO\FindCoin\FindCoin\bin\Debug\netcoreapp2.1\FindCoin.deps.json
+C:\Users\tlan\NEO\FindCoin\FindCoin\bin\Debug\netcoreapp2.1\FindCoin.runtimeconfig.json
+C:\Users\tlan\NEO\FindCoin\FindCoin\bin\Debug\netcoreapp2.1\FindCoin.runtimeconfig.dev.json
+C:\Users\tlan\NEO\FindCoin\FindCoin\bin\Debug\netcoreapp2.1\FindCoin.dll
+C:\Users\tlan\NEO\FindCoin\FindCoin\bin\Debug\netcoreapp2.1\FindCoin.pdb
+C:\Users\tlan\NEO\FindCoin\FindCoin\bin\Debug\netcoreapp2.1\Newtonsoft.Json.dll
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.csproj.CopyComplete
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.dll
+C:\Users\tlan\NEO\FindCoin\FindCoin\obj\Debug\netcoreapp2.1\FindCoin.pdb

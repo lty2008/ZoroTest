@@ -1,0 +1,5 @@
+﻿{
+  "txid": "0x506f0972fe4e2f120ebc788c5488add04fb2f7250b925d2b5be5f1bcec064759",
+  "blockindex": 198,
+  "blocktime": 1537776900
+}
