@@ -9,6 +9,7 @@ using Neo.Plugins;
 using Neo.Services;
 using Neo.SmartContract;
 using Neo.Wallets;
+using Neo.VM;
 using Neo.Wallets.NEP6;
 using Neo.Wallets.SQLite;
 using System;
@@ -78,6 +79,8 @@ namespace Neo.Shell
                     return OnRebuildCommand(args);
                 case "send":
                     return OnSendCommand(args);
+                case "sendBcp":
+                    return OnSendBcpCommand(args);
                 case "show":
                     return OnShowCommand(args);
                 case "start":
@@ -384,6 +387,7 @@ namespace Neo.Shell
                 "\texport key [address] [path]\n" +
                 "\timport multisigaddress m pubkeys...\n" +
                 "\tsend <id|alias> <address> <value>|all [fee=0]\n" +
+                "\tsendBcp <address> <value> [fee=0]\n" +
                 "\tsign <jsonObjectToSign>\n" +
                 "Node Commands:\n" +
                 "\tshow state\n" +
@@ -726,6 +730,89 @@ namespace Neo.Shell
                     return true;
                 }
             }
+            ContractParametersContext context = new ContractParametersContext(tx);
+            Program.Wallet.Sign(context);
+            if (context.Completed)
+            {
+                tx.Witnesses = context.GetWitnesses();
+                Program.Wallet.ApplyTransaction(tx);
+                system.LocalNode.Tell(new LocalNode.Relay { Inventory = tx });
+                Console.WriteLine($"TXID: {tx.Hash}");
+            }
+            else
+            {
+                Console.WriteLine("SignatureContext:");
+                Console.WriteLine(context.ToString());
+            }
+            return true;
+        }
+
+        private bool OnSendBcpCommand(string[] args)
+        {
+            string ContractHash = "0x0920825f8e657a3a10d1aff4ac9b64d80c68a905";
+
+            if (args.Length < 3 || args.Length > 4)
+            {
+                Console.WriteLine("error");
+                return true;
+            }
+            if (NoWallet()) return true;
+            string password = ReadPassword("password");
+            if (password.Length == 0)
+            {
+                Console.WriteLine("cancelled");
+                return true;
+            }
+            if (!Program.Wallet.VerifyPassword(password))
+            {
+                Console.WriteLine("Incorrect password");
+                return true;
+            }
+            // toAddress scriptHash
+            UInt160 scriptHash = args[2].ToScriptHash();
+            string fromaddr = args[1];
+            string toaddr = args[2];
+
+
+            //拼合约的汇编工具
+            byte[] vmscript = null;
+
+            ContractParameter[] parameters = new[]
+            {
+                new ContractParameter
+                {
+                    // from address
+                    Type = ContractParameterType.String,
+                    Value = fromaddr
+                },
+                new ContractParameter
+                {
+                    // to address
+                    Type = ContractParameterType.String,
+                    Value = toaddr
+                },
+                new ContractParameter
+                {
+                    Type = ContractParameterType.Integer,
+                    Value = Convert.ToInt32(args[2] + "0000000")
+                }
+            };
+
+            using (ScriptBuilder sb = new ScriptBuilder())
+            {
+                sb.EmitAppCall(ContractHash.ToScriptHash(), "transfer", parameters);
+                vmscript = sb.ToArray();
+            }
+
+            //
+            Fixed8 fee = Fixed8.Zero;
+            InvocationTransaction tx = new InvocationTransaction
+            {
+                Version = 1,
+                Script = vmscript,
+                Gas = fee
+            };
+
             ContractParametersContext context = new ContractParametersContext(tx);
             Program.Wallet.Sign(context);
             if (context.Completed)
